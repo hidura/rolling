@@ -1,0 +1,161 @@
+<odoo>
+
+
+    <record id="action_product_variant" model="ir.actions.act_window">
+        <field name="name">Registro de variantes de productos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.variant</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Registre su variante de producto para restaurantes
+          </p><p>
+
+          </p>
+        </field>
+    </record>
+
+    <record id="product_variant_tree_view" model="ir.ui.view">
+        <field name="name">product.variant.tree</field>
+        <field name="model">product.variant</field>
+        <field name="arch" type="xml">
+            <tree string="Productos" multi_edit="1">
+                <field name="variant_name" string="Nombre de la variante" readonly="1"/>
+                <field name="product_id" string="Producto" readonly="1"/>
+                <field name="product_target" string="Producto objetivo" readonly="1"/>
+                <field name="price" string="Precio" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+
+    <!-- Menus -->
+    <menuitem id="pos_restaurant" sequence="0" name="POSRestaurant"/>
+
+    <menuitem
+        id="menu_action_product_product_form"
+        name="Variantes de Productos"
+        sequence="1"
+        action="action_product_variant"
+        parent="pos_restaurant"/>
+
+
+
+
+    <record id="action_product_suggested" model="ir.actions.act_window">
+        <field name="name">Registro de productos sugeridos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.suggested</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Registre su sugerencias de producto para restaurantes
+          </p><p>
+
+          </p>
+        </field>
+    </record>
+
+    <record id="product_suggested_tree_view" model="ir.ui.view">
+        <field name="name">product.suggested.tree</field>
+        <field name="model">product.suggested</field>
+        <field name="arch" type="xml">
+            <tree string="Productos" multi_edit="1">
+                <field name="suggested_name" string="Nombre de la sugerencia" readonly="1"/>
+                <field name="product_id" string="Producto" readonly="1"/>
+                <field name="product_target" string="Producto objetivo" readonly="1"/>
+                <field name="price" string="Precio" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <menuitem
+        id="menu_action_suggested"
+        name="Sugerencias de Productos"
+        sequence="2"
+        action="action_product_suggested"
+        parent="pos_restaurant"/>
+
+
+
+
+
+
+    <record id="action_product_suggested" model="ir.actions.act_window">
+        <field name="name">Registro de opcionales de producto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.optionals</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Registre su opciones de producto para restaurantes
+          </p><p>
+
+          </p>
+        </field>
+    </record>
+
+    <record id="product_optionals_tree_view" model="ir.ui.view">
+        <field name="name">product.optionals.tree</field>
+        <field name="model">product.optionals</field>
+        <field name="arch" type="xml">
+            <tree string="Productos" multi_edit="1">
+                <field name="optionals_name" string="Nombre de la opcion" readonly="1"/>
+                <field name="product_id" string="Producto" readonly="1"/>
+                <field name="product_target" string="Producto objetivo" readonly="1"/>
+                <field name="price" string="Precio" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <menuitem
+        id="menu_action_optionals"
+        name="Opcionales de Productos"
+        sequence="3"
+        action="action_product_suggested"
+        parent="pos_restaurant"/>
+
+
+
+
+
+    <record id="action_product_terms" model="ir.actions.act_window">
+        <field name="name">Registro de terminos de producto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.terms</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Registre sus terminos de productos
+          </p><p>
+
+          </p>
+        </field>
+    </record>
+
+    <record id="product_optionals_tree_view" model="ir.ui.view">
+        <field name="name">product.terms.tree</field>
+        <field name="model">product.terms</field>
+        <field name="arch" type="xml">
+            <tree string="Productos" multi_edit="1">
+                <field name="term_name" string="Nombre del termino" readonly="1"/>
+                <field name="product_id" string="Producto" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <menuitem
+        id="menu_action_optionals"
+        name="Opcionales de Productos"
+        sequence="3"
+        action="action_product_suggested"
+        parent="pos_restaurant"/>
+
+
+</odoo>
